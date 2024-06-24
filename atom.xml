@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>血肉苦痛，机械飞升</title>
+  
+  <subtitle>加入光荣的进化吧</subtitle>
+  <link href="https://songdongjing.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://songdongjing.github.io/"/>
+  <updated>2024-06-24T11:56:25.815Z</updated>
+  <id>https://songdongjing.github.io/</id>
+  
+  <author>
+    <name>sdj</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssh免密码登录</title>
+    <link href="https://songdongjing.github.io/2024/06/24/ssh-mian-mi-ma-deng-lu/"/>
+    <id>https://songdongjing.github.io/2024/06/24/ssh-mian-mi-ma-deng-lu/</id>
+    <published>2024-06-24T11:49:17.000Z</published>
+    <updated>2024-06-24T11:56:25.815Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ssh连接通常需要输入用户的密码，但是可以通过生成RSA加密算法完成面密码登录。&lt;/p&gt;
+&lt;h2 id=&quot;方法&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#方法&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="技巧" scheme="https://songdongjing.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>6/25周报</title>
+    <link href="https://songdongjing.github.io/2024/06/24/6-25-zhou-bao/"/>
+    <id>https://songdongjing.github.io/2024/06/24/6-25-zhou-bao/</id>
+    <published>2024-06-24T10:07:39.000Z</published>
+    <updated>2024-06-24T12:02:11.055Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;多进程胜率计算程序&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#多进程胜率计算程序&quot;&gt;&lt;/a&gt; 多进程胜率计算程序&lt;/h2&gt;
+&lt;p&gt;上次实验发现运行一个仿真器需要一半(14cpu core)的cpu核心参与运算。&lt;br&gt;
+&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="毕业进展" scheme="https://songdongjing.github.io/tags/%E6%AF%95%E4%B8%9A%E8%BF%9B%E5%B1%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo框架解析</title>
+    <link href="https://songdongjing.github.io/2024/06/24/hexo-kuang-jia-jie-xi/"/>
+    <id>https://songdongjing.github.io/2024/06/24/hexo-kuang-jia-jie-xi/</id>
+    <published>2024-06-24T02:49:37.000Z</published>
+    <updated>2024-06-24T02:15:28.912Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;文档结构&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#文档结构&quot;&gt;&lt;/a&gt; 文档结构&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;hexo文档结构&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    
+    <category term="前端" scheme="https://songdongjing.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20240618实验周报</title>
+    <link href="https://songdongjing.github.io/2024/06/16/20240618-shi-yan-zhou-bao/"/>
+    <id>https://songdongjing.github.io/2024/06/16/20240618-shi-yan-zhou-bao/</id>
+    <published>2024-06-16T07:49:37.000Z</published>
+    <updated>2024-06-24T12:01:47.996Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;编写多进程程序完成胜率计算&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#编写多进程程序完成胜率计算&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="毕业进展" scheme="https://songdongjing.github.io/tags/%E6%AF%95%E4%B8%9A%E8%BF%9B%E5%B1%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VScode_git代码上传教程</title>
+    <link href="https://songdongjing.github.io/2024/06/16/vscode-git-dai-ma-shang-chuan-jiao-cheng/"/>
+    <id>https://songdongjing.github.io/2024/06/16/vscode-git-dai-ma-shang-chuan-jiao-cheng/</id>
+    <published>2024-06-16T07:49:37.000Z</published>
+    <updated>2024-06-16T07:50:39.495Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;动机&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#动机&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="git" scheme="https://songdongjing.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅浅理解大模型</title>
+    <link href="https://songdongjing.github.io/2024/06/11/qian-qian-li-jie-da-mo-xing/"/>
+    <id>https://songdongjing.github.io/2024/06/11/qian-qian-li-jie-da-mo-xing/</id>
+    <published>2024-06-11T02:20:37.000Z</published>
+    <updated>2024-06-11T05:13:47.584Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;大模型训练架构&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#大模型训练架构&quot;&gt;&lt;/a&gt; 大模型训练架构&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://openai.com/index/chatgpt/&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="https://songdongjing.github.io/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode刷题记录(1)手写STL库</title>
+    <link href="https://songdongjing.github.io/2024/06/10/leetcode-shua-ti-ji-lu-1/"/>
+    <id>https://songdongjing.github.io/2024/06/10/leetcode-shua-ti-ji-lu-1/</id>
+    <published>2024-06-10T05:07:29.000Z</published>
+    <updated>2024-06-11T05:13:47.580Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;day1&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#day1&quot;&gt;&lt;/a&gt; day1&lt;/h1&gt;
+&lt;h2 id=&quot;手写vector&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#手写vector&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="leetcode" scheme="https://songdongjing.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>latex深入拓展</title>
+    <link href="https://songdongjing.github.io/2024/06/06/latex-shen-ru-tuo-zhan/"/>
+    <id>https://songdongjing.github.io/2024/06/06/latex-shen-ru-tuo-zhan/</id>
+    <published>2024-06-06T08:30:11.000Z</published>
+    <updated>2024-06-11T05:13:47.579Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1原因&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1原因&quot;&gt;&lt;/a&gt; 1.原因&lt;/h2&gt;
+&lt;p&gt;在用latex写作用参考文献时出现了错误，所以深入分析了一下latex的文件内容，顺便写一下latex相关的知识总结&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="latex" scheme="https://songdongjing.github.io/tags/latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>智能空战方法思路</title>
+    <link href="https://songdongjing.github.io/2024/06/03/zhi-neng-kong-zhan-fang-fa-si-lu/"/>
+    <id>https://songdongjing.github.io/2024/06/03/zhi-neng-kong-zhan-fang-fa-si-lu/</id>
+    <published>2024-06-02T23:15:55.000Z</published>
+    <updated>2024-06-11T05:13:47.583Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1动力学模型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1动力学模型&quot;&gt;&lt;/a&gt; 1.动力学模型&lt;/h2&gt;
+&lt;p&gt;根据《飞行器控制系统》书籍可以得到如下关系式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;力方程组&lt;/p&gt;
+&lt;p</summary>
+        
+      
+    
+    
+    
+    
+    <category term="强化学习" scheme="https://songdongjing.github.io/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MPC与强化学习</title>
+    <link href="https://songdongjing.github.io/2024/05/31/mpc-yu-qiang-hua-xue-xi/"/>
+    <id>https://songdongjing.github.io/2024/05/31/mpc-yu-qiang-hua-xue-xi/</id>
+    <published>2024-05-31T04:03:05.000Z</published>
+    <updated>2024-06-11T05:13:47.577Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1动机&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1动机&quot;&gt;&lt;/a&gt; 1.动机&lt;/h2&gt;
+&lt;p&gt;由于实验室中的某些做传统算法的使用了mpc作为他们的策略生成方式，网上有人把mpc算法也划分到了model-based</summary>
+        
+      
+    
+    
+    
+    
+    <category term="强化学习" scheme="https://songdongjing.github.io/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用ngrok实现内网穿透+ssh连接</title>
+    <link href="https://songdongjing.github.io/2024/05/30/yong-ngrok-shi-xian-nei-wang-chuan-tou-ssh-lian-jie/"/>
+    <id>https://songdongjing.github.io/2024/05/30/yong-ngrok-shi-xian-nei-wang-chuan-tou-ssh-lian-jie/</id>
+    <published>2024-05-30T11:34:00.000Z</published>
+    <updated>2024-06-11T05:13:47.585Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在组会的时候由于服务器不能带走，导致笔记本电脑无法连接到服务器来获取上面的资源，所以想在组会上通过建立ssh连接来访问资源，但是由于在外面连的校园网，服务器连的教研室的网，所以需要进行内网穿透。&lt;/p&gt;
+&lt;h2 id=&quot;内网穿透&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="技巧" scheme="https://songdongjing.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>latex知识总结</title>
+    <link href="https://songdongjing.github.io/2024/05/28/latex-zhi-shi-zong-jie/"/>
+    <id>https://songdongjing.github.io/2024/05/28/latex-zhi-shi-zong-jie/</id>
+    <published>2024-05-28T13:02:01.000Z</published>
+    <updated>2024-06-11T05:13:47.580Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基础知识介绍&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#基础知识介绍&quot;&gt;&lt;/a&gt; 基础知识介绍&lt;/h1&gt;
+&lt;h2 id=&quot;latex包含什么&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="latex" scheme="https://songdongjing.github.io/tags/latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql安装与远程连接</title>
+    <link href="https://songdongjing.github.io/2024/05/27/mysql-an-zhuang-yu-yuan-cheng-lian-jie/"/>
+    <id>https://songdongjing.github.io/2024/05/27/mysql-an-zhuang-yu-yuan-cheng-lian-jie/</id>
+    <published>2024-05-27T11:21:02.000Z</published>
+    <updated>2024-06-24T02:31:11.275Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1动机&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1动机&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="工具使用" scheme="https://songdongjing.github.io/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>智能空战实验说明</title>
+    <link href="https://songdongjing.github.io/2024/05/27/zhi-neng-kong-zhan-shi-yan-shuo-ming/"/>
+    <id>https://songdongjing.github.io/2024/05/27/zhi-neng-kong-zhan-shi-yan-shuo-ming/</id>
+    <published>2024-05-27T02:25:16.000Z</published>
+    <updated>2024-06-24T12:02:01.089Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;智能空战&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#智能空战&quot;&gt;&lt;/a&gt; 智能空战&lt;/h1&gt;
+&lt;h2 id=&quot;1训练架构&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1训练架构&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="毕业进展" scheme="https://songdongjing.github.io/tags/%E6%AF%95%E4%B8%9A%E8%BF%9B%E5%B1%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>opencvC++库移植</title>
+    <link href="https://songdongjing.github.io/2024/05/18/opencvc-ku-yi-zhi/"/>
+    <id>https://songdongjing.github.io/2024/05/18/opencvc-ku-yi-zhi/</id>
+    <published>2024-05-18T02:18:31.000Z</published>
+    <updated>2024-06-11T05:13:47.581Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原因&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#原因&quot;&gt;&lt;/a&gt; 原因&lt;/h2&gt;
+&lt;p&gt;由于嵌入式设备进行图像处理需要主打高性能的C&lt;ins&gt;语言进行编程，所以需要移植opencvC&lt;/ins&gt;库。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="嵌入式" scheme="https://songdongjing.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows上建立交叉编译</title>
+    <link href="https://songdongjing.github.io/2024/05/16/windows-shang-jian-li-jiao-cha-bian-yi/"/>
+    <id>https://songdongjing.github.io/2024/05/16/windows-shang-jian-li-jiao-cha-bian-yi/</id>
+    <published>2024-05-16T08:57:50.000Z</published>
+    <updated>2024-06-11T05:13:47.581Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;交叉编译的目的&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#交叉编译的目的&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="嵌入式" scheme="https://songdongjing.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网线分类</title>
+    <link href="https://songdongjing.github.io/2024/05/16/wang-xian-fen-lei/"/>
+    <id>https://songdongjing.github.io/2024/05/16/wang-xian-fen-lei/</id>
+    <published>2024-05-16T07:13:30.000Z</published>
+    <updated>2024-06-11T05:13:47.585Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原因&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#原因&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="硬件知识" scheme="https://songdongjing.github.io/tags/%E7%A1%AC%E4%BB%B6%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>右键菜单加入VSCode打开文件和文件夹</title>
+    <link href="https://songdongjing.github.io/2024/05/15/you-jian-cai-dan-jia-ru-vscode-da-kai-wen-jian-he-wen-jian-jia/"/>
+    <id>https://songdongjing.github.io/2024/05/15/you-jian-cai-dan-jia-ru-vscode-da-kai-wen-jian-he-wen-jian-jia/</id>
+    <published>2024-05-15T09:52:37.000Z</published>
+    <updated>2024-06-11T05:13:47.581Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;右键菜单加入用vscode打开文件和文件夹&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#右键菜单加入用vscode打开文件和文件夹&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="技巧" scheme="https://songdongjing.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>嵌入式摄像头采集</title>
+    <link href="https://songdongjing.github.io/2024/05/06/qian-ru-shi-she-xiang-tou-cai-ji/"/>
+    <id>https://songdongjing.github.io/2024/05/06/qian-ru-shi-she-xiang-tou-cai-ji/</id>
+    <published>2024-05-06T12:44:20.000Z</published>
+    <updated>2024-06-16T08:07:19.987Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ov5640摄像头实践&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#ov5640摄像头实践&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="嵌入式" scheme="https://songdongjing.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NFS挂载</title>
+    <link href="https://songdongjing.github.io/2024/05/06/nfs-gua-zai/"/>
+    <id>https://songdongjing.github.io/2024/05/06/nfs-gua-zai/</id>
+    <published>2024-05-06T11:54:19.000Z</published>
+    <updated>2024-06-11T05:13:47.578Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;嵌入式开发工作流&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#嵌入式开发工作流&quot;&gt;&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="嵌入式" scheme="https://songdongjing.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+  </entry>
+  
+</feed>
