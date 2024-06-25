@@ -491,21 +491,21 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-24
+                    2024-06-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    204
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -537,6 +537,115 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa
   Port 22
   User username
   IdentityFile 本地密匙位置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="ssh文件目录"><a class="markdownIt-Anchor" href="#ssh文件目录"></a> .ssh文件目录</h5>
+<ul>
+<li>config: 配置文件</li>
+<li>id_rsa: 私钥</li>
+<li>id_rsa.pub: 公钥</li>
+<li>known_hosts: 记录已确认的SSH主机的公钥</li>
+</ul>
+<h2 id="后续"><a class="markdownIt-Anchor" href="#后续"></a> 后续</h2>
+<p>由于ssh-key文件名太乱了，我打算删除.ssh文件夹下所有得文件，重新进行生成。一通操作成功得把我的github免密连接搞没了。后续进行了一系列操作，在这里记录一下。</p>
+<h3 id="ssh免密登录github"><a class="markdownIt-Anchor" href="#ssh免密登录github"></a> ssh免密登录github</h3>
+<h4 id="1生成ssh密钥"><a class="markdownIt-Anchor" href="#1生成ssh密钥"></a> 1.生成ssh密钥</h4>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-b</span> <span class="token number">4096</span> <span class="token parameter variable">-f</span> ~/.ssh/id_rsa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>会生成id_rsa密钥和id_rsa.pub公钥</p>
+<h4 id="2启动ssh代理并添加密钥"><a class="markdownIt-Anchor" href="#2启动ssh代理并添加密钥"></a> 2.启动SSH代理并添加密钥</h4>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>ssh-agent <span class="token parameter variable">-s</span><span class="token variable">)</span></span>"</span>
+ssh-add ~/.ssh/id_rsa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="3在github上添加公钥"><a class="markdownIt-Anchor" href="#3在github上添加公钥"></a> 3.在github上添加公钥</h4>
+<p>将id_rsa.pub文件中的内容复制到github的ssh密钥中。</p>
+<h4 id="4测试"><a class="markdownIt-Anchor" href="#4测试"></a> 4.测试</h4>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果出现<code>Hi username! You've successfully authenticated, but GitHub does not provide shell access.</code>则表示成功。</p>
+<h3 id="出现的一些问题"><a class="markdownIt-Anchor" href="#出现的一些问题"></a> 出现的一些问题</h3>
+<p>我选择生成密钥的名字为id_rsagithub,然后在配置文件config中添加</p>
+<pre class="line-numbers language-none"><code class="language-none">Host github
+  HostName github.com
+  User git
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsagithub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后执行<code>ssh -T git@github</code>时出现<code>Permission denied (publickey).</code><br>
+使用命令<code>ssh -vT git@github.com</code>生成调试信息得到如下结果(我加入了一些个人注释)。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">ssh</span> <span class="token parameter variable">-vT</span> git@github.com
+OpenSSH_9.4p1, OpenSSL <span class="token number">3.1</span>.2 <span class="token number">1</span> Aug <span class="token number">2023</span>  <span class="token comment">#开源远程连接工具openssh和开源密码工具openssl</span>
+debug1: Reading configuration data /c/Users/63155/.ssh/config <span class="token comment">#读取配置文件</span>
+debug1: Reading configuration data /etc/ssh/ssh_config <span class="token comment">#这里应该是我的wsl上的文件，没有内容</span>
+debug1: Connecting to github.com <span class="token punctuation">[</span><span class="token number">20.205</span>.243.166<span class="token punctuation">]</span> port <span class="token number">22</span>.
+debug1: Connection established.
+<span class="token comment">#这里读取id_rsa等一系列文件全都失败</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_rsa <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span> 
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_rsa-cert <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_ecdsa <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_ecdsa-cert <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_ecdsa_sk <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_ecdsa_sk-cert <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_ed25519 <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_ed25519-cert <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_ed25519_sk <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_ed25519_sk-cert <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_xmss <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_xmss-cert <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_dsa <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: identity <span class="token function">file</span> /c/Users/63155/.ssh/id_dsa-cert <span class="token builtin class-name">type</span> <span class="token parameter variable">-1</span>
+debug1: Local version string SSH-2.0-OpenSSH_9.4
+debug1: Remote protocol version <span class="token number">2.0</span>, remote software version babeld-a406152d <span class="token comment">#SSH远程协议</span>
+debug1: compat_banner: no match: babeld-a406152d
+debug1: Authenticating to github.com:22 as <span class="token string">'git'</span>
+<span class="token comment">#这里开始读取known_hosts文件，是以前连接过的信息，也失败</span>
+debug1: load_hostkeys: fopen /c/Users/63155/.ssh/known_hosts2: No such <span class="token function">file</span> or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such <span class="token function">file</span> or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such <span class="token function">file</span> or directory
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256
+debug1: kex: <span class="token function">host</span> key algorithm: ssh-ed25519
+debug1: kex: server-<span class="token operator">&gt;</span>client cipher: chacha20-poly1305@openssh.com MAC: <span class="token operator">&lt;</span>implicit<span class="token operator">&gt;</span> compression: none
+debug1: kex: client-<span class="token operator">&gt;</span>server cipher: chacha20-poly1305@openssh.com MAC: <span class="token operator">&lt;</span>implicit<span class="token operator">&gt;</span> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: SSH2_MSG_KEX_ECDH_REPLY received
+debug1: Server <span class="token function">host</span> key: ssh-ed25519 SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU
+debug1: load_hostkeys: fopen /c/Users/63155/.ssh/known_hosts2: No such <span class="token function">file</span> or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such <span class="token function">file</span> or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such <span class="token function">file</span> or directory
+debug1: Host <span class="token string">'github.com'</span> is known and matches the ED25519 <span class="token function">host</span> key.
+debug1: Found key <span class="token keyword">in</span> /c/Users/63155/.ssh/known_hosts:1
+debug1: rekey out after <span class="token number">134217728</span> blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey <span class="token keyword">in</span> after <span class="token number">134217728</span> blocks
+debug1: get_agent_identities: bound agent to hostkey
+debug1: get_agent_identities: agent returned <span class="token number">1</span> keys
+debug1: Will attempt key: sdj RSA SHA256:2sOOA/s3qLdESVFlsKSyYJQJEZZtaknttbvRHEsyMb4 agent
+debug1: Will attempt key: /c/Users/63155/.ssh/id_rsa
+debug1: Will attempt key: /c/Users/63155/.ssh/id_ecdsa
+debug1: Will attempt key: /c/Users/63155/.ssh/id_ecdsa_sk
+debug1: Will attempt key: /c/Users/63155/.ssh/id_ed25519
+debug1: Will attempt key: /c/Users/63155/.ssh/id_ed25519_sk
+debug1: Will attempt key: /c/Users/63155/.ssh/id_xmss
+debug1: Will attempt key: /c/Users/63155/.ssh/id_dsa
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_input_ext_info: server-sig-algs<span class="token operator">=</span><span class="token operator">&lt;</span>ssh-ed25519-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com,sk-ecdsa-sha2-nistp256-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,ssh-ed25519,ecdsa-sha2-nistp521,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256,rsa-sha2-512,rsa-sha2-256,ssh-rsa<span class="token operator">&gt;</span>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Offering public key: sdj RSA SHA256:2sOOA/s3qLdESVFlsKSyYJQJEZZtaknttbvRHEsyMb4 agent
+debug1: Authentications that can continue: publickey
+debug1: Trying private key: /c/Users/63155/.ssh/id_rsa
+debug1: Trying private key: /c/Users/63155/.ssh/id_ecdsa
+debug1: Trying private key: /c/Users/63155/.ssh/id_ecdsa_sk
+debug1: Trying private key: /c/Users/63155/.ssh/id_ed25519
+debug1: Trying private key: /c/Users/63155/.ssh/id_ed25519_sk
+debug1: Trying private key: /c/Users/63155/.ssh/id_xmss
+debug1: Trying private key: /c/Users/63155/.ssh/id_dsa
+debug1: No <span class="token function">more</span> authentication methods to try.
+git@github.com: Permission denied <span class="token punctuation">(</span>publickey<span class="token punctuation">)</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这些调试信息并没有看懂，但是意思就是没有根据我的配置文件来，自顾自的读取一些默认的文件，并没有读取我改名后的文件，所以最后我改回rsa后就正确了。</p>
+<blockquote>
+<p>目前考虑是由于/etc/ssh/ssh_config覆盖了我的/c/Users/63155/.ssh/config，导致其寻找的都是默认位置。</p>
+</blockquote>
+
                 
             </div>
             <hr/>
@@ -958,7 +1067,7 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">25.9k</span>
+                        class="white-color">27.1k</span>
             
             
             
